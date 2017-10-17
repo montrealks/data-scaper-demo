@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Data Scraper Demo</title>
+    <meta content="Set an alert and walk away, Coin Owl will watch the altcoin market and notify you when your price point has been reached." name="Description">
+    <!--Favicons-->
+    <!--<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">-->
+    <!--<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="none" onload="if(media!='all')media='all'">
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="text-center">
+                <h1>
+                    Data Scraper Demo
+                </h1>
+                <p>
+                    Scrapes data from <a href="https://www.theguardian.com/uk" target="_blank">The Guardian</a> online newspaper
+                </p>
+            </div>
+            <p>
+                 <ul>
+                        <li>Press 'Get headlines' to scrape all the headline data from The Guardian homepage</li>
+                        <li>Press 'Retrieve meta data' to have the program load each articles page and scrape additional meta data</li>
+                    </ul>
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-8">
+                <div class="col-xs-12">
+                    <button type="button" class="btn btn-info pull-left" id="btn-get-headlines">Get headlines</button>
+                    <button type="button" class="btn btn-info pull-right" id="btn-get-meta">Retrieve meta data</button>
+                </div>
+                <div class="col-xs-12">
+                    <form id="secret-form-submit" action="/download">
+
+                    </form>
+                    <div class="text-center">
+                        <button type="button" value="" class="btn btn-primary" id="btn-get-csv">Get formatted CSV</button>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="col-xs-4"></div>
+                    <div id="progress-bar">
+                        <div class="col-xs-4">
+                            <label for="progressbar">This can take a second...</label>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" name="progressbar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div id="results-container">
+                        <table class="table" id="results-table">
+                            <thead>
+                                <tr>
+                                    <!--Initial Headers-->
+                                    <th id="th-1">Headline Title</th>
+                                    <th id="th-2">Headline Kicker</th>
+                                    <th id="th-3">Headline Body</th>
+                                    <th id="th-4">Headline Link</th>
+                                    <!--Meta Headers-->
+                                    <th clas="meta-initial-hide">Authors</th>
+                                    <th clas="meta-initial-hide">Tags</th>
+                                    <th clas="meta-initial-hide">Publish Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-table-body">
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer-container">
+    </div>
+    </footer>
+
+    <!--Javascript-->
+    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script defer type="text/javascript" src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+    <script defer type="text/javascript" src="{{ url_for('static',filename='scripts.js') }}"></script>
+</body>
+
+</html>
