@@ -71,7 +71,7 @@ $(function() {
 
                     // Advance the progress bar
                     progress_bar_position += 1;
-                    $('.progress-bar').delay(100).css('width', progress_bar_position / article_count * 100 + '%')
+                    $('.progress-bar').css('width', progress_bar_position / article_count * 100 + '%')
 
                     // Clean up when all article meta data is loaded into the table
                     if (progress_bar_position + 1 == article_count) {

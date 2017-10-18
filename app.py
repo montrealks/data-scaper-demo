@@ -25,7 +25,7 @@ def guardian_homepage():
 def per_article_meta():
     g = GetTheGaurdianData
     position = request.args.get("position")
-    
+    print('Getting meta data for page #{}'.format(position))
     return jsonify(g.get_per_page_details(int(position)))
     
 @app.route('/download', methods=['POST', 'GET'])
