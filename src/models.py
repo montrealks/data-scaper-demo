@@ -15,9 +15,8 @@ class GetTheGaurdianData():
             r = requests.get("https://www.theguardian.com/")
             soup = BeautifulSoup(r.text, "html5lib")
             GetTheGaurdianData.HOME_PAGE_DATA = soup
-            # l = soup.findAll('div', {'class': 'fc-item__container'})
         else:
-            soup = BeautifulSoup(GuardianHomePage, "html5lib")
+            soup = BeautifulSoup(GuardianHomePage, html.parser)
             GetTheGaurdianData.HOME_PAGE_DATA = soup
         print("succesfully retrieved the home page")
 
@@ -50,13 +49,10 @@ class GetTheGaurdianData():
                 
             headline['headline_link'] = item.find('a', {'class': "fc-item__link"}).get('href')
             
-            
             headlines.append(headline)
             
         GetTheGaurdianData.HOME_PAGE_DATA_FORMATTED = headlines
         return headlines
-        
-        
         
     @staticmethod
     def get_per_page_details(position):

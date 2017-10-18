@@ -4,6 +4,9 @@
     display: none;
 }
 
+#top-circle-buttons {
+    margin-top:48px;
+}
 .circle {
     border:1px solid black;    
     height:10px;
