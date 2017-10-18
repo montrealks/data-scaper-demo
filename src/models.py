@@ -16,7 +16,7 @@ class GetTheGaurdianData():
             soup = BeautifulSoup(r.text, "html5lib")
             GetTheGaurdianData.HOME_PAGE_DATA = soup
         else:
-            soup = BeautifulSoup(GuardianHomePage, html.parser)
+            soup = BeautifulSoup(GuardianHomePage)
             GetTheGaurdianData.HOME_PAGE_DATA = soup
         print("succesfully retrieved the home page")
 
