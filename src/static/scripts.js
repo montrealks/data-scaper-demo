@@ -7,7 +7,7 @@ $(function() {
         // Check if table already populated
         if ($('#results-table-body tr').length > 1) {
             $('#results-table-body').children().remove()
-            $('#btn-get-meta').hide()
+            $('#btn-get-meta, #btn-get-csv').hide()
             $('td.meta').remove()
             $('#btn-get-headlines').removeClass('btn-warning').addClass('btn-info').text('Get headlines');
             return false
@@ -108,6 +108,13 @@ $(function() {
             .success($('#secret-form-submit').submit())
     })
 
+
+    $('.circle').click(function(){
+        $('.circle').removeClass('circle-selected');
+        $(this).addClass('circle-selected');
+        var id = $(this).attr('id');
+        
+    });
 
 
 });

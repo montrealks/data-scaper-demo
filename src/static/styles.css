@@ -1,3 +1,24 @@
-#progress-bar, #btn-get-meta, #btn-get-csv {
+#progress-bar,
+#btn-get-meta,
+#btn-get-csv {
     display: none;
+}
+
+.circle {
+    border:1px solid black;    
+    height:10px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    width:10px;
+    margin-bottom: 2px;
+}
+
+.circle-selected {
+    background: #5bc0de;
+}
+
+#top-list-explain {
+    margin: auto;
+    width: fit-content;
 }

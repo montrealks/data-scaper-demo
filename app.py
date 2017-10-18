@@ -2,9 +2,10 @@ from flask import Flask, jsonify, render_template, request, Response, make_respo
 import csv
 from io import StringIO
 import configs
-from src.models import GetTheGaurdianData, ghp
+from src.models import GetTheGaurdianData
 
 app = Flask(__name__, template_folder="src/templates/", static_folder="src/static")
+
 
 @app.route('/', methods=['GET', 'POST'])
 def getting_started():
@@ -15,7 +16,7 @@ def getting_started():
 @app.route('/guardian_homepage', methods=['GET'])
 def guardian_homepage():
     g = GetTheGaurdianData()
-    g.load_home_page(ghp)
+    g.load_home_page()
     headlines = g.load_headlines()
     return jsonify(headlines)
 
@@ -25,7 +26,7 @@ def per_article_meta():
     g = GetTheGaurdianData
     position = request.args.get("position")
     
-    return jsonify(g.get_per_page_details(ghp, int(position)))
+    return jsonify(g.get_per_page_details(int(position)))
     
 @app.route('/download', methods=['POST', 'GET'])
 def download():

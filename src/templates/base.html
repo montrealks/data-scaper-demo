@@ -16,21 +16,29 @@
 
 <body>
     <div class="jumbotron">
+        <div class="pull-left">
+                <div class="circle circle-selected" id="external-load-full"></div>
+                <div class="circle" id=id="external-load-ten"></div>
+                <div class="circle" id="internal-load-full"></div>
+                <div class="circle" id="internal-load-10"></div>
+            </div>
         <div class="container">
             <div class="text-center">
                 <h1>
                     Data Scraper Demo
                 </h1>
                 <p>
-                    Scrapes data from <a href="https://www.theguardian.com/uk" target="_blank">The Guardian</a> online newspaper
+                    Scrapes data from <a href="https://www.theguardian.com/uk" target="_blank">The Guardian</a> online newspaper<br>
                 </p>
+                <div class="text-left" id="top-list-explain">
+                    <small>
+                        1. Press 'Get headlines' to scrape all the headline data from The Guardian homepage<br>
+                        2. Press 'Retrieve meta data' to have the program load each articles page and scrape additional meta data<br>
+                        3. Press 'Get formatted CSV' to download a CSV of the table
+                    </small>
+                </div>
             </div>
-            <p>
-                 <ul>
-                        <li>Press 'Get headlines' to scrape all the headline data from The Guardian homepage</li>
-                        <li>Press 'Retrieve meta data' to have the program load each articles page and scrape additional meta data</li>
-                    </ul>
-            </p>
+            
         </div>
     </div>
     <div class="container">
